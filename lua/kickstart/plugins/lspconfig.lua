@@ -111,11 +111,18 @@ local servers = {
   --    https://github.com/pmizio/typescript-tools.nvim
   --
   -- But for many setups, the LSP (`ts_ls`) will work just fine
-  -- ts_ls = {},
-
+  ts_ls = {},
   pyright = {},
   zls = {},
   stylua = {}, -- Used to format Lua code
+  astro = {
+    init_options = {
+      typescript = {
+        -- Use a specific path to TypeScript 6.x
+        tsdk = '/usr/lib/node_modules/typescript/lib'  -- Or wherever npm installs it
+      },
+    },
+  },
 
   -- Special Lua Config, as recommended by neovim help docs
   lua_ls = {
